@@ -22,10 +22,12 @@ Os experimentos foram conduzidos com listas pseudoaleatórias (`random.seed(42)`
 ## 2. Gráficos
 
 ### Tempo de Execução
-![Gráfico de Tempos]<img width="2100" height="825" alt="grafico_comparacoes" src="https://github.com/user-attachments/assets/c9318320-c75a-46d3-aea5-132c80115f4d" />
+![Gráfico de Tempos]
+<img width="2100" height="825" alt="grafico_comparacoes" src="https://github.com/user-attachments/assets/c9318320-c75a-46d3-aea5-132c80115f4d" />
 
 ### Número de Comparações
-![Gráfico de Comparações]<img width="2100" height="825" alt="grafico_tempos" src="https://github.com/user-attachments/assets/064758ec-f0a7-4fdd-b432-2c7f00fa30d5" />
+![Gráfico de Comparações]
+<img width="2100" height="825" alt="grafico_tempos" src="https://github.com/user-attachments/assets/064758ec-f0a7-4fdd-b432-2c7f00fa30d5" />
 
 ---
 
