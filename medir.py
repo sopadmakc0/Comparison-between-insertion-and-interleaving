@@ -36,36 +36,35 @@ def executar_experimento():
         for _ in range(REPETICOES):
             lista_base = [random.randint(1, 100000) for _ in range(n)]
 
-            # 1. Ordenação por Inserção
+            
             entrada_ins = lista_base.copy()
             gc.disable()
             t0 = time.perf_counter()
             _, c_ins = ordenacao_insercao(entrada_ins)
             t1 = time.perf_counter()
             gc.enable()
-            tempos_ins.append((t1 - t0) * 1000.0)  # em milissegundos (ms)
+            tempos_ins.append((t1 - t0) * 1000.0)  
             comps_ins.append(c_ins)
 
-            # 2. Ordenação por Intercalação
+           
             entrada_inter = lista_base.copy()
             gc.disable()
             t0 = time.perf_counter()
             _, c_inter = ordenacao_intercalacao(entrada_inter)
             t1 = time.perf_counter()
             gc.enable()
-            tempos_inter.append((t1 - t0) * 1000.0)  # em milissegundos (ms)
+            tempos_inter.append((t1 - t0) * 1000.0)  
             comps_inter.append(c_inter)
 
-            # 3. sorted() nativo - Medição de Tempo (sem overhead de wrapper)
+           
             entrada_sorted = lista_base.copy()
             gc.disable()
             t0 = time.perf_counter()
             _ = sorted(entrada_sorted)
             t1 = time.perf_counter()
             gc.enable()
-            tempos_sorted.append((t1 - t0) * 1000.0)  # em milissegundos (ms)
-
-            # 4. sorted() nativo - Contagem de Comparações (Extra)
+            tempos_sorted.append((t1 - t0) * 1000.0)  
+           
             _, c_sorted = ordenar_sorted_contando(lista_base)
             comps_sorted.append(c_sorted)
 
@@ -132,11 +131,11 @@ def gerar_graficos(resultados):
     c_sort = [r["comp_sorted"] for r in resultados]
     c_nlogn = [r["limite_n_log2_n"] for r in resultados]
 
-    # Índice até n = 100 para o subplot de zoom no ponto de virada
+   
     idx_zoom = [i for i, n in enumerate(ns) if n <= 100]
     ns_z = [ns[i] for i in idx_zoom]
 
-    # --- GRÁFICO 1: TEMPOS ---
+   
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5.5))
 
     ax1.plot(ns, t_ins, "o-", label="Inserção", color="#d62728", linewidth=2)
@@ -162,7 +161,7 @@ def gerar_graficos(resultados):
     plt.close(fig)
     print(f"Gráfico '{GRAFICO_TEMPOS}' gerado com sucesso.")
 
-    # --- GRÁFICO 2: COMPARAÇÕES ---
+    
     fig, (ax1, ax2) = plt.subplots(1, 2, figsize=(14, 5.5))
 
     ax1.plot(ns, c_ins, "o-", label="Inserção", color="#d62728", linewidth=2)
