@@ -70,7 +70,7 @@ A ordenação por inserção continua sendo a melhor escolha em três cenários 
 
 ---
 
-## 7. Extra (+0,2): Comparações do `sorted()` vs. Limite $n \log_2 n$
+## 7. Extra : Comparações do `sorted()` vs. Limite $n \log_2 n$
 
 Para medir as comparações internas do `sorted()`, implementamos a classe `ElementoComparavel` em `ordenacao.py`, que armazena o valor original e incrementa um contador estático sempre que o método especial `__lt__` (`<`) é chamado.
 
