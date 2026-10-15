@@ -22,10 +22,10 @@ Os experimentos foram conduzidos com listas pseudoaleatórias (`random.seed(42)`
 ## 2. Gráficos
 
 ### Tempo de Execução
-![Gráfico de Tempos](grafico_tempos.png)
+![Gráfico de Tempos]<img width="2100" height="825" alt="grafico_comparacoes" src="https://github.com/user-attachments/assets/c9318320-c75a-46d3-aea5-132c80115f4d" />
 
 ### Número de Comparações
-![Gráfico de Comparações](grafico_comparacoes.png)
+![Gráfico de Comparações]<img width="2100" height="825" alt="grafico_tempos" src="https://github.com/user-attachments/assets/064758ec-f0a7-4fdd-b432-2c7f00fa30d5" />
 
 ---
 
@@ -75,5 +75,5 @@ Para medir as comparações internas do `sorted()`, implementamos a classe `Elem
 
 ### Análise dos resultados:
 - **Abaixo do limite $n \log_2 n$:** Em todos os tamanhos testados ($n = 5$ a $1000$), o número médio de comparações do `sorted()` ficou **consistentemente abaixo de $n \log_2 n$** (por exemplo, em $n = 1000$, o `sorted()` fez `8.719,65` comparações contra o limite de `9.965,78`). Isso ocorre porque o limite inferior teórico da árvore de decisão para ordenação por comparação é $\lceil \log_2(n!) \rceil \approx n \log_2 n - 1,44n$, e o Timsort aproxima-se muito dessa fronteira ótima ($\approx n \log_2 n - 1,25n$).
-- **Comportamento em listas pequenas ($n \le 50$):** Mesmo usando ordenação por inserção internamente para $n < 64$, o `sorted()` fez muito menos comparações que a nossa `ordenacao_insercao` (em $n = 50$, foram `219,45` chamadas de `__lt__` no `sorted()` contra `653,40` na inserção comum). Isso acontece porque o CPython utiliza **Inserção Binária (*Binary Insertion Sort*)**, que emprega busca binária ($O(\log i)$) para localizar a posição de inserção de cada elemento, reduzindo as comparações de $O(n^2)$ para $O(n \log n)$ mesmo em vetores pequenos.<img width="2100" height="825" alt="grafico_comparacoes" src="https://github.com/user-attachments/assets/c9318320-c75a-46d3-aea5-132c80115f4d" />
-<img width="2100" height="825" alt="grafico_tempos" src="https://github.com/user-attachments/assets/064758ec-f0a7-4fdd-b432-2c7f00fa30d5" />
+- **Comportamento em listas pequenas ($n \le 50$):** Mesmo usando ordenação por inserção internamente para $n < 64$, o `sorted()` fez muito menos comparações que a nossa `ordenacao_insercao` (em $n = 50$, foram `219,45` chamadas de `__lt__` no `sorted()` contra `653,40` na inserção comum). Isso acontece porque o CPython utiliza **Inserção Binária (*Binary Insertion Sort*)**, que emprega busca binária ($O(\log i)$) para localizar a posição de inserção de cada elemento, reduzindo as comparações de $O(n^2)$ para $O(n \log n)$ mesmo em vetores pequenos.
+
